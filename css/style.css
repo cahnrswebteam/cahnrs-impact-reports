@@ -1,0 +1,77 @@
+/**
+ * Additional styles for Impact Reports
+ * -----------------------------------------------------------------------------
+ */
+
+main {
+	position: relative;
+}
+#content h1 {
+	margin-top: 12px;
+}
+#content .impact-report-tabs {
+	list-style: none;
+	/*position: absolute;
+	right: 0;*/
+	text-align: right;
+	/*top: 15px;*/
+}
+.impact-report-tabs > li > a {
+	background-color: #5e6a71;
+	color: #fff;
+	display: block;
+	text-decoration: none;
+	padding: 2px 4px;
+}
+.impact-report-tabs > li > a:hover {
+	background-color: #b5babe;
+}
+#content .impact-report-tabs li ul {
+	list-style: none;
+	margin-right: 22px;
+	padding: 0;
+	text-align: left;
+	width: 219px;
+}
+#content .impact-report-tabs li ul li {
+	background-color: #eff0f1;
+	margin: 1px 0;
+	padding: 2px 4px 2px 20px;
+}
+.column-two img {
+	margin-bottom: 12px;
+}
+.ir-footer {
+	margin-top: 20px;
+}
+.ir-footer p {
+	text-align: center;
+}
+
+/* Legacy */
+#content .impact-report-tabs {
+	float: right;
+	font-size: 12px;
+	margin: 15px 0 0 0;
+	padding: 0;
+	width: 20%;
+}
+#content .impact-report-tabs li {
+	margin: 5px 0;
+}
+#content .impact-report-tabs li ul {
+	margin: 0;
+}
+#content .impact-report-tabs li ul li {
+	background: none;
+	margin: 1px 0;
+	padding: 2px 4px 2px 20px;
+}
+
+@media screen and (min-width:960px) {
+
+	#content .impact-report-tabs li ul li {
+		background-color: transparent;
+	}
+
+}

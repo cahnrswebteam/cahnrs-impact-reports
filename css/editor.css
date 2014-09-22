@@ -1,0 +1,70 @@
+/**
+ * Styles for the Impact Report post editing interface
+ *
+ * Hides the editor and all kinds of other stuff
+ * -----------------------------------------------------------------------------
+ */
+
+
+#postdivrich,
+#programs-adder,
+#locations-adder,
+.upload-image-id {
+	display: none;
+}
+.upload-set-wrapper img {
+	height: auto;
+	max-width: 100%;
+	width: 100%;
+}
+#ir_subtitle,
+#ir_headline {
+	width: 100%;
+}
+#poststuff h3.irtitle,
+.metabox-holder h3.irtitle {
+	padding: 0;
+}
+#poststuff p.irdescription,
+.metabox-holder p.irdescription {
+	margin: 0 0 4px;
+}
+#wp-ir_summary-wrap,
+.ir-main-counter,
+.ir-front-sidebar-counter,
+.ir-back-sidebar-counter,
+#wp-ir_footer_front-wrap,
+#wp-ir_footer_back-wrap {
+	margin-bottom: 20px;
+}
+.ir-main-counter,
+.ir-front-sidebar-counter,
+.ir-back-sidebar-counter {
+	border-top: none;
+	font-size: 12px;
+	font-weight: normal;
+	padding: 2px 10px;
+	position: relative;
+}
+.ir-image-size {
+	font-size: 11px;
+}
+#ir_additional_title {
+	width: 100%;
+	margin-bottom: 10px;
+}
+#ir-send-button {
+	float: right;
+	line-height: 23px;
+	text-align: right;
+}
+#ir-add-title-wrap {
+	position: relative;
+}
+#ir-additional-title-prompt-text {
+	color: #777;
+	cursor: text;
+	font-size: 14px;
+	padding: 5px 7px;
+	position: absolute;
+}
