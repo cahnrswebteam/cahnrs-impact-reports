@@ -14,7 +14,7 @@ class taxonomies_control {
 		$this->programs();
 		$this->categories();
 		
-		$this->set_default_terms();
+		//$this->set_default_terms();
 		//$this->set_program_terms();
 	}
 

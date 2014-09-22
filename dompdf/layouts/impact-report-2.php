@@ -26,7 +26,7 @@ if ( $the_query->have_posts() ) :
 			}
 			.page-break	{ display: block; page-break-before: always; }
 			a { text-decoration: none; }
-			h1 { font-size: 26px; font-weight: normal; line-height: 30px; margin: 0; padding: 15px 0 0 0; text-align: right; text-transform: uppercase; }
+			h1 { font-size: 24px; font-weight: normal; line-height: 30px; margin: 0; padding: 15px 0 0 0; text-align: right; text-transform: uppercase; }
 			h2 { font-weight: normal; font-size: 20px; font-style: italic; line-height: 1em; margin: 0; padding: 15px 0 0 0; }
 			h2.long { font-size: 18px; line-height: 1.3em; }
 			h3 { font-size: 20px; font-weight: normal; margin: 0; padding: 15px 0 0 0; }
@@ -65,8 +65,12 @@ if ( $the_query->have_posts() ) :
 			.content-column .inner-copy li ul li { text-align: left; }
 
 			.bottom-left-image { left: 0; position: absolute; }
+			
+			h1, h2, .footer-copy-inner strong, .footer-copy-inner a { color: #951734; }
+			.site-address-inner { background-color: #951734; }
+			h3 { color: #951734; }
 
-			<?php if ( $program[0] == '4h' ) : ?>
+			<?php /*if ( $program[0] == '4h' ) : ?>
 			h1, h2, .footer-copy-inner strong, .footer-copy-inner a { color: #329a4b; }
 			.site-address-inner { background-color: #329a4b; }
 			h3 { color: #b6bf00; }
@@ -94,7 +98,7 @@ if ( $the_query->have_posts() ) :
 			h1, h2, .footer-copy-inner strong, .footer-copy-inner a { color: #4b3000; }
 			.site-address-inner { background-color:#4b3000; }
 			h3 { color: #b6bf00; }
-			<?php endif; ?>
+			<?php endif;*/ ?>
 
 		</style>
 	</head>
@@ -105,8 +109,8 @@ if ( $the_query->have_posts() ) :
 		<div class="header">
 			<div class="logo-area">
 			<?php
-				if ( ! empty( $program ) )
-					echo '<img src="' . plugins_url( 'cahnrs-impact-reports' ) . '/images/' . $program[0] . '-mark.jpg" alt="" height="190" width="230" />';
+				//if ( ! empty( $program ) )
+					echo '<img src="' . plugins_url( 'cahnrs-impact-reports' ) . '/images/extension-mark.jpg" alt="" height="190" width="230" />';
 			?>
 			</div><div class="banner-area single-banner">
 			<?php
@@ -192,7 +196,7 @@ if ( $the_query->have_posts() ) :
 		?>
 			<div class="site-address">
 				<div class="site-address-inner">
-					<a href="<?php echo get_post_type_archive_link( 'impact-report' ); ?>">http://ext100.wsu.edu/impact/</a>
+					<a href="http://cahnrs.wsu.edu/impacts">www.cahnrs.wsu.edu/impacts</a>
 				</div>
 			</div><div class="footer-copy double-column">
 				<div class="footer-copy-inner">
@@ -289,6 +293,7 @@ if ( $the_query->have_posts() ) :
 					$proportion = 222 / $image[1];
 					$margin = round( ( $proportion * $image[2] ) + 7 );
 					$resize_src = get_attachment_link( $img_array[0] );
+					echo $resize_src;
 					echo '<img class="bottom-left-image" src="' . $resize_src . '?resized&width=550&crop=true" width="220" style="top: -' . $margin . 'px;" />';
 				}
 			}
