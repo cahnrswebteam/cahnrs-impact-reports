@@ -293,7 +293,7 @@ if ( $the_query->have_posts() ) :
 					$proportion = 222 / $image[1];
 					$margin = round( ( $proportion * $image[2] ) + 7 );
 					$resize_src = get_attachment_link( $img_array[0] );
-					echo $resize_src;
+					/*echo $resize_src;*/
 					echo '<img class="bottom-left-image" src="' . $resize_src . '?resized&width=550&crop=true" width="220" style="top: -' . $margin . 'px;" />';
 				}
 			}
