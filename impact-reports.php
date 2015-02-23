@@ -28,6 +28,7 @@ class impact_report {
 		$init_widgets = new widget_control(); // REGISTER WIDGET AREA
 		$init_editor = new editor_control(); // TINYMCE PLUGIN HANDLING
 		$init_pdf = new pdf_converter_control(); // ADDS PDF FUNCTIONALITY
+		$init_draft_visibility = new draft_visibility_control(); // Make drafts viewable
 
 		if ( \is_admin() ) {
 			$init_helptab = new helptab_control(); // CONTEXTUAL HELP
