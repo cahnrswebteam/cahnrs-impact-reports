@@ -115,16 +115,17 @@ if ( $the_query->have_posts() ) :
 			</div><div class="banner-area single-banner">
 			<?php
 				if ( has_post_thumbnail() ) {
-					$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
+					
+					$img_id = get_post_thumbnail_id( $post->ID );
+					
+					$image = wp_get_attachment_image_src( $img_id, 'full' );
+					
 					if ( $image[1] >= '1370' && $image[2] >= '450' ) {
-						$resize_src = get_attachment_link( get_post_thumbnail_id( $post->ID ) );
-						if ( strpos( $resize_src , '?' ) !== false ) {
-							$resize_src .= '&';
-						} else {
-							$resize_src .= '?';
-						}
-						echo '<div><img src="' . $resize_src . 'resized&width=1370&height=450&crop=true" alt=""/></div>';
+
+						echo '<div><img src="' . get_home_url() . '/?resized&width=1370&height=450&img=' . $image[0] . '" /></div>';
+						
 					}
+
 				}
 			?>
 			</div>
@@ -194,13 +195,8 @@ if ( $the_query->have_posts() ) :
 				if ( $image[1] >= '550' ) {
 					$proportion = 222 / $image[1];
 					$margin = round( ( $proportion * $image[2] ) + 7 );
-					$resize_src = get_attachment_link( $img_array[0] );
-					if ( strpos( $resize_src , '?' ) !== false ) {
-							$resize_src .= '&';
-						} else {
-							$resize_src .= '?';
-						}
-					echo '<img class="bottom-left-image" src="' . $resize_src . 'resized&width=550&crop=true" width="220" style="top: -' . $margin . 'px;" />';
+					echo '<img class="bottom-left-image" src="' . get_home_url() . '/?resized&width=550&img=' . $image[0] . '" width="220" style="top: -' . $margin . 'px;" />';
+					//echo '<img class="bottom-left-image" src="' . $resize_src . 'resized&width=550&crop=true" width="220" style="top: -' . $margin . 'px;" />';
 				}
 			}
 		?>
@@ -227,13 +223,14 @@ if ( $the_query->have_posts() ) :
 					$img_array = explode( '$S$', $ir_banner_2_1 );
 					$image = wp_get_attachment_image_src( $img_array[0], 'full' );
 					if ( $image[1] >= '550' && $image[2] >= '450' ) {
-						$resize_src = get_attachment_link( $img_array[0] );
+						/*$resize_src = get_attachment_link( $img_array[0] );
 						if ( strpos( $resize_src , '?' ) !== false ) {
 							$resize_src .= '&';
 						} else {
 							$resize_src .= '?';
-						}
-						echo '<img src="' . $resize_src . 'resized&width=550&height=450&crop=true" alt="" />';
+						}*/
+						//echo '<img src="' . $resize_src . 'resized&width=550&height=450&crop=true" alt="" />';
+						echo '<img src="' . get_home_url() . '/?resized&width=550&height=450&img=' . $image[0] . '" />';
 					}
 				}
 			?>
@@ -244,13 +241,14 @@ if ( $the_query->have_posts() ) :
 					$img_array = explode( '$S$', $ir_banner_2_2 );
 					$image = wp_get_attachment_image_src( $img_array[0], 'full' );
 					if ( $image[1] >= '677' && $image[2] >= '450' ) {
-						$resize_src = get_attachment_link( $img_array[0] );
+						/*$resize_src = get_attachment_link( $img_array[0] );
 						if ( strpos( $resize_src , '?' ) !== false ) {
 							$resize_src .= '&';
 						} else {
 							$resize_src .= '?';
-						}
-						echo '<img src="' . $resize_src . 'resized&width=677&height=450&crop=true" alt="" />';
+						}*/
+						//echo '<img src="' . $resize_src . 'resized&width=677&height=450&crop=true" alt="" />';
+						echo '<img src="' . get_home_url() . '/?resized&width=677&height=450&img=' . $image[0] . '" />';
 					}
 				}
 
@@ -259,13 +257,14 @@ if ( $the_query->have_posts() ) :
 					$img_array = explode( '$S$', $ir_banner_2_3 );
 					$image = wp_get_attachment_image_src( $img_array[0], 'full' );
 					if ( $image[1] >= '677' && $image[2] >= '450' ) {
-						$resize_src = get_attachment_link( $img_array[0] );
+						/*$resize_src = get_attachment_link( $img_array[0] );
 						if ( strpos( $resize_src , '?' ) !== false ) {
 							$resize_src .= '&';
 						} else {
 							$resize_src .= '?';
-						}
-						echo '<img src="' . $resize_src . 'resized&width=677&height=450&crop=true" alt="" />';
+						}*/
+						//echo '<img src="' . $resize_src . 'resized&width=677&height=450&crop=true" alt="" />';
+						echo '<img src="' . get_home_url() . '/?resized&width=677&height=450&img=' . $image[0] . '" />';
 					}
 				}
 			?>
@@ -317,13 +316,14 @@ if ( $the_query->have_posts() ) :
 				if ( $image[1] >= '550' ) {
 					$proportion = 222 / $image[1];
 					$margin = round( ( $proportion * $image[2] ) + 7 );
-					$resize_src = get_attachment_link( $img_array[0] );
+					/*$resize_src = get_attachment_link( $img_array[0] );
 					if ( strpos( $resize_src , '?' ) !== false ) {
-							$resize_src .= '&';
-						} else {
-							$resize_src .= '?';
-						}
-					echo '<img class="bottom-left-image" src="' . $resize_src . 'resized&width=550&crop=true" width="220" style="top: -' . $margin . 'px;" />';
+						$resize_src .= '&';
+					} else {
+						$resize_src .= '?';
+					}
+					echo '<img class="bottom-left-image" src="' . $resize_src . 'resized&width=550&crop=true" width="220" style="top: -' . $margin . 'px;" />';*/
+					echo '<img class="bottom-left-image" src="' . get_home_url() . '/?resized&width=550&img=' . $image[0] . '" width="220" style="top: -' . $margin . 'px;" />';
 				}
 			}
 		?>

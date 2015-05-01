@@ -16,16 +16,16 @@ class template_control {
 			else if ( \is_single() ) {
 				$template = DIR . 'views/legacy-single.php';
 			}
-			else if ( \is_archive() ) {
-				$template = DIR . 'views/legacy-archive.php';
-			}
 
 		}
+		
+		if ( \is_post_type_archive( 'impact' ) )
+			$template = DIR . 'views/legacy-archive.php';
 
-		if ( \get_post_type() == 'attachment' && isset( $_GET['resized'] ) )
+		if ( is_front_page() && isset( $_GET['resized'] ) )
 			$template = DIR . 'views/image-resized.php';
 
-		if ( is_search() && $_GET['post_type'] == 'impact' )
+		if ( \is_search() && $_GET['post_type'] == 'impact' )
 			$template = DIR . 'views/search.php';
 
 		return $template;
